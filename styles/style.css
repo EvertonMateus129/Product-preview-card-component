@@ -36,12 +36,12 @@ body {
 }
 
 .container {
-  display: flex;
-  max-width: 600px;
-  width: 100%;
-  background-color: var(--white);
-  border-radius: 10px;
-}
+    display: flex;
+    width: min(100% - 32px, 600px);
+    background-color: var(--white);
+    border-radius: 10px;
+    overflow: hidden;
+  }
 
 .card {
   height: 100%;
@@ -119,4 +119,24 @@ body {
   font-size: 14px;
   font-weight: bold;
   cursor: pointer;
+}
+
+
+@media (max-width: 600px) {
+    body {
+        min-height: 100vh;
+        height: auto;
+        padding: 28px 0;
+      }
+      .container {
+        flex-direction: column;
+        max-width: 343px;
+      }
+      .card img {
+        height: 240px;
+        object-position: center;
+      }
+    .attribution {
+        display: none;
+    }
 }
